@@ -1,15 +1,137 @@
 .footer {
-  padding: rem(20) 0;
-  background: var(--black-color);
-
+  @include adaptiveClamp(padding-top, 38, 32);
+  padding-bottom: rem(22);
+  border-top: 1px solid #bdd4e7;
   // .footer__container
   &__container {
-    display: flex;
-    align-items: center;
 
-    @include media-mx(510) {
-      flex-direction: column;
-      align-items: flex-start;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(40);
+    @media(max-width:850px){
+        flex-direction: column-reverse;
+    }
+  }
+
+  &__one {
+    margin-top: rem(28);
+    max-width: rem(256);
+    h3 {
+      font-size: rem(16);
+      font-weight: 600;
+      line-height: 130%;
+      margin-bottom: rem(8);
+    }
+    @media(max-width:850px){
+        margin-top: 0;
+    }
+  }
+
+  &__one-body {
+    margin-left: rem(12);
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+    a {
+      font-size: rem(14);
+      line-height: 120%;
+      color: #212227;
+      cursor: pointer;
+      transition: all 0.3s ease  0s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__two {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    @media(max-width:850px){
+        align-items: start;
+    }
+  }
+
+  &__logo {
+    @include adaptiveClamp(max-width, 488, 320);
+    @include adaptiveClamp(margin-bottom, 19, 22);
+    img {
+      width: 100%;
+    }
+  }
+
+  &__tow-body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    max-width: rem(257);
+    text-align: right;
+    
+    p {
+      font-size: 14px;
+      line-height: 120%;
+      color: #6c757d;
+    }
+    @media(max-width:850px){
+        text-align: left;
+    }
+  }
+
+  &__bottom {
+    @include adaptiveClamp(margin-top, 50, 40);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: rem(12);
+    a {
+      font-size: rem(14);
+      line-height: 150%;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #212529;
+      transition: all 0.3s ease  0s;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+      @media(max-width:850px){
+        &:first-child {
+          order: 1;
+        }
+        &:nth-child(2) {
+          order: 0;
+        }
+        &:last-child {
+          order: 2;
+        }
+    }
+    }
+    a.mail {
+      font-weight: 600;
+      font-size: rem(24);
+      line-height: 120%;
+      color: #212529;
+      text-decoration: none;
+    }
+    @media(max-width:850px){
+        flex-direction: column;
+        align-items: start;
+        &:first-child {
+          order: 1;
+        }
+        &:nth-child(2) {
+          order: 0;
+        }
+        &:last-child {
+          order: 2;
+        }
     }
   }
 }
+.mail {
+}
+

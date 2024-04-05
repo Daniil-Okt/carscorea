@@ -178,26 +178,10 @@ BaseHelpers.addLoadedClass();
 // toggleActiveClass(elementAll)
 
 
+const itemQuests = document.querySelectorAll('.item-quest');
 
-var recomRow = document.querySelector('.recom__row');
-var recomContainer = document.querySelector('.recom__container');
-
-window.addEventListener('scroll', function() {
-    var recomRowWidth = recomRow.offsetWidth;
-    var recomContainerWidth = recomContainer.offsetWidth;
-    var scrollLeft = window.scrollX;
-    var windowWidth = window.innerWidth;
-
-    var start = 0;
-    var middle = recomContainerWidth / 2 - recomRowWidth / 2;
-    var end = recomContainerWidth - recomRowWidth;
-
-    if (scrollLeft < middle) {
-        recomContainer.scrollTo(0, 0);
-    } else if (scrollLeft >= middle && scrollLeft <= end) {
-        recomContainer.scrollTo(middle, 0);
-    } else {
-        recomContainer.scrollTo(end, 0);
-    }
+itemQuests.forEach(item => {
+    item.addEventListener('click', function() {
+        this.classList.toggle('_active');
+    });
 });
-

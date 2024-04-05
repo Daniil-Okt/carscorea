@@ -1,5 +1,8 @@
 section.about {
     @include adaptiveClamp(padding-top, 1, 0);
+    @media(max-width:800px){
+        @include adaptiveClamp(padding-top, 22, 21);
+    }
 }
 
 .about {
