@@ -79,13 +79,24 @@
     &__item-hidden {
         // background-color: red;
         flex: 1 1 30%;
-        scroll-snap-align: start;
+        
         &:nth-child(2) {
             flex: 1 1 40%;
         }
         &:first-child {
             flex: 1 1 30%;
+            scroll-snap-align: start;
         }
+        &:last-child {
+            scroll-snap-align: end;
+        }
+        @media(max-width:620px){
+            scroll-snap-align: start;
+            &:last-child {
+                scroll-snap-align: start;
+            }
+        }
+        
     }
     &__item {
         display: flex;
